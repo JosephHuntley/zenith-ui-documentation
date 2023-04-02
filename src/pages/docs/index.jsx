@@ -3,11 +3,10 @@ import Head from "next/head"
 import Link from "next/link"
 import { getAllArticles } from "../../../utils/mdx"
 export default function Page({ posts }) {
-  console.log({ ...components })
   return (
     <>
       <Head>
-        <title>Nexus-UI</title>
+        <title>Zenith-UI</title>
         <meta
           name="description"
           content="Documentation for Zenith UI Components"

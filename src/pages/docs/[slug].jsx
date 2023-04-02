@@ -6,7 +6,7 @@ import { serialize } from "next-mdx-remote/serialize"
 import { getSlug, getArticleFromSlug } from "../../../utils/mdx"
 
 export default function Doc({ post: { source, frontmatter, components } }) {
-  const title = `${frontmatter.title} | Nexus-UI`
+  const title = `${frontmatter.title} | Zenith-UI`
 
   return (
     <>

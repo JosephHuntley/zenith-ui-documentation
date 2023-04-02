@@ -1,7 +1,6 @@
 import React from "react"
 import Head from "next/head"
 import { MDXRemote } from "next-mdx-remote"
-import * as components from "@josephhuntley/zenith-ui"
 import { serialize } from "next-mdx-remote/serialize"
 
 import { getSlug, getArticleFromSlug } from "../../../utils/mdx"
@@ -13,6 +12,9 @@ export default function Doc({ post: { source, frontmatter, components } }) {
     <>
       <Head>
         <title>{title}</title>
+        <meta name="description" content={frontmatter.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
         <h1>{frontmatter.title}</h1>

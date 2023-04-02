@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "prettier --write . && next dev ",
-    "build": "prettier --write . && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "prettier --write . && next lint"
   },

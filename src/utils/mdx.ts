@@ -2,6 +2,7 @@ import path from "path"
 import fs from "fs"
 import matter from "gray-matter"
 import { sync } from "glob"
+import { ArticleType } from "@/types/articleType"
 
 const articlesPath = path.join(process.cwd(), "data/mdx")
 
@@ -18,7 +19,7 @@ export async function getSlug() {
   })
 }
 
-export async function getArticleFromSlug(slug) {
+export async function getArticleFromSlug(slug: string) {
   const articleDir = path.join(articlesPath, `${slug}.mdx`)
   const source = fs.readFileSync(articleDir)
   const { content, data } = matter(source)
@@ -39,7 +40,7 @@ export async function getArticleFromSlug(slug) {
 export async function getAllArticles() {
   const articles = fs.readdirSync(path.join(process.cwd(), "data/mdx"))
 
-  return articles.reduce((allArticles, articleSlug) => {
+  return articles.reduce((allArticles, articleSlug): any => {
     // get parsed data from mdx files in the "articles" dir
     const source = fs.readFileSync(
       path.join(process.cwd(), "data/mdx", articleSlug),

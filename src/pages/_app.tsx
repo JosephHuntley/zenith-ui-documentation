@@ -1,10 +1,11 @@
 import type { AppProps } from "next/app"
-import { ZenithProvider } from "zenith-ui"
+import Theme from "../styles/Theme"
+import "../styles/global.css"
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ZenithProvider>
+    <Theme>
       <Component {...pageProps} />
-    </ZenithProvider>
+    </Theme>
   )
 }

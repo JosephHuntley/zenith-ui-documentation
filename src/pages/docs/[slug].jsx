@@ -3,7 +3,7 @@ import Head from "next/head"
 import { MDXRemote } from "next-mdx-remote"
 import { serialize } from "next-mdx-remote/serialize"
 
-import { getSlug, getArticleFromSlug } from "../../../utils/mdx"
+import { getSlug, getArticleFromSlug } from "../../utils/mdx"
 
 export default function Doc({ post: { source, frontmatter, components } }) {
   const title = `${frontmatter.title} | Zenith-UI`
@@ -19,7 +19,7 @@ export default function Doc({ post: { source, frontmatter, components } }) {
       <div>
         <h1>{frontmatter.title}</h1>
         <div>
-          <MDXRemote {...source} />
+          <MDXRemote {...source} components={components} />
         </div>
       </div>
     </>

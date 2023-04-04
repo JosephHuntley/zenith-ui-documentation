@@ -14,18 +14,33 @@ body {
   color: var(--font-color);
   cursor: default;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button {
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
   font-family: Poppins, sans-serif;
   background: linear-gradient(
     90deg,
     rgba(165, 165, 165, 1) 0%,
     rgba(255, 255, 255, 0.85) 100%
+  );
+  width: max-content;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode h5,
+.light-mode h6 {
+  font-family: Poppins, sans-serif;
+  background: linear-gradient(
+    90deg,
+    rgba(80, 80, 80, 1) 0%,
+    rgba(40, 40, 40, 1) 100%
   );
   width: max-content;
   -webkit-background-clip: text;
@@ -52,4 +67,28 @@ li {
 
 .cursor {
   cursor: pointer;
+}
+
+.dark-mode .logo {
+  background: linear-gradient(
+    90deg,
+    rgba(165, 165, 165, 1) 0%,
+    rgba(30, 203, 255, 1) 100%
+  );
+  width: max-content;
+  display: inline;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light-mode .logo {
+  background: linear-gradient(
+    90deg,
+    rgba(40, 40, 40, 1) 0%,
+    rgba(30, 203, 255, 1) 100%
+  );
+  width: max-content;
+  display: inline;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

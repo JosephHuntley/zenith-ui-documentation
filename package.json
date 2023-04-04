@@ -28,7 +28,7 @@
     "rehype-highlight": "^6.0.0",
     "rehype-slug": "^5.1.0",
     "typescript": "5.0.2",
-    "zenith-ui": "file:../../zenith-ui-0.0.6.tgz"
+    "zenith-ui": "^0.0.5"
   },
   "devDependencies": {
     "@size-limit/preset-big-lib": "^8.2.4",

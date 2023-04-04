@@ -1,22 +1,33 @@
 import React from "react"
-import { Box, Container } from "zenith-ui"
+import { Box, Container, Text } from "zenith-ui"
 import { Components } from "../../../data/Constants"
+import { useRouter } from "next/router"
 
 const Sidebar = () => {
+  const router = useRouter()
   return (
     <Box
-      size={{ width: "25vw", height: "100%" }}
-      flex={{ direction: "column", gap: "1rem" }}
-      position={{ position: "relative" }}
-      padding={{ p: "1rem" }}
+      size={{ width: "15vw", height: "calc(100%-10vh)" }}
+      flex={{ direction: "column", gap: "2rem" }}
+      position={{ position: "absolute", top: "15vh" }}
+      padding={{ x: "1.5rem", bottom: "2rem" }}
     >
       {Components.map((data) => (
-        <div key={data.category}>
-          {data.category}
+        <Container
+          flex={{ gap: ".5rem", direction: "column" }}
+          key={data.category}
+        >
+          <Text variant="h2">{data.category}</Text>
           {data.items.map((title) => (
-            <div key={title}>{title}</div>
+            <div
+              className="cursor"
+              key={title}
+              onClick={() => router.push(`/docs/${title.toLowerCase()}`)}
+            >
+              <Text>{title}</Text>
+            </div>
           ))}
-        </div>
+        </Container>
       ))}
     </Box>
   )

@@ -22,9 +22,18 @@ h5,
 h6,
 button {
   font-family: Poppins, sans-serif;
+  background: linear-gradient(
+    90deg,
+    rgba(165, 165, 165, 1) 0%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
+  width: max-content;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 a {
   text-decoration: none;
+  color: var(--font-color);
 }
 li {
   list-style: none;
@@ -36,7 +45,11 @@ li {
   --bg-secondary: #ccc;
 }
 .dark-mode {
-  --font-color: #cccccc;
+  --font-color: #bbb;
   --bg-primary: #141821;
   --bg-secondary: #222938;
+}
+
+.cursor {
+  cursor: pointer;
 }

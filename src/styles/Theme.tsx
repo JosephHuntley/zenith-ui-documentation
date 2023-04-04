@@ -1,9 +1,9 @@
 import { ZenithProvider, useDarkMode } from "zenith-ui"
-import { ReactNode, useEffect } from "react"
+import { ReactNode, useEffect, createContext } from "react"
 import light from "../themes/default"
 import dark from "../themes/dark"
 
-export type ThemeType = {
+type ThemeType = {
   theme: {
     fonts: {
       title: string
@@ -25,7 +25,15 @@ export type ThemeType = {
   }
 }
 
-const Theme = ({ children }: { children: ReactNode }) => {
+export const ThemeContext = createContext<{
+  theme: string | Function
+  themeToggler: string | Function
+}>({
+  theme: "light",
+  themeToggler: () => {},
+})
+
+export const Theme = ({ children }: { children: ReactNode }) => {
   const [theme, themeToggler] = useDarkMode()
 
   const mode = theme === "light" ? light : dark
@@ -40,7 +48,15 @@ const Theme = ({ children }: { children: ReactNode }) => {
     }
   }, [theme])
 
-  return <ZenithProvider value={mode}>{children}</ZenithProvider>
+  return (
+    <ZenithProvider value={mode}>
+      <ThemeContext.Provider
+        value={{ theme: theme, themeToggler: themeToggler }}
+      >
+        {children}
+      </ThemeContext.Provider>
+    </ZenithProvider>
+  )
 }
 
 export default Theme

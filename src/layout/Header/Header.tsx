@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header>
       <Box
-        className={styles.header}
+        className={`${styles.header} cursor`}
         size={{ width: "100%", height: "15vh" }}
         flex={{ direction: "row", gap: "1rem" }}
         padding={{ p: "1.5rem" }}

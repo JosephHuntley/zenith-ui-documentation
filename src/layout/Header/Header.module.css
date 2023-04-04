@@ -1,3 +1,16 @@
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7rem;
+  display: flex;
   align-items: center;
+  z-index: 99;
+  background-color: var(--bg-primary);
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
 }

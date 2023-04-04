@@ -1,5 +1,7 @@
 import { ZenithProvider, useDarkMode } from "zenith-ui"
 import { ReactNode, useEffect } from "react"
+import light from "../themes/default"
+import dark from "../themes/dark"
 
 export type ThemeType = {
   theme: {
@@ -26,6 +28,8 @@ export type ThemeType = {
 const Theme = ({ children }: { children: ReactNode }) => {
   const [theme, themeToggler] = useDarkMode()
 
+  const mode = theme === "light" ? light : dark
+
   useEffect(() => {
     if (theme === "light") {
       document.documentElement.classList.remove("dark-mode")
@@ -36,7 +40,7 @@ const Theme = ({ children }: { children: ReactNode }) => {
     }
   }, [theme])
 
-  return <ZenithProvider>{children}</ZenithProvider>
+  return <ZenithProvider value={mode}>{children}</ZenithProvider>
 }
 
 export default Theme

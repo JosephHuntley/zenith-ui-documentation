@@ -2,7 +2,7 @@ import React from "react"
 import Head from "next/head"
 import { MDXRemote } from "next-mdx-remote"
 import { serialize } from "next-mdx-remote/serialize"
-
+import Layout from "@/layout/Layout"
 import { getSlug, getArticleFromSlug } from "../../utils/mdx"
 
 export default function Doc({ post: { source, frontmatter, components } }) {
@@ -16,12 +16,14 @@ export default function Doc({ post: { source, frontmatter, components } }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <h1>{frontmatter.title}</h1>
+      <Layout>
         <div>
-          <MDXRemote {...source} components={components} />
+          <h1>{frontmatter.title}</h1>
+          <div>
+            <MDXRemote {...source} components={components} />
+          </div>
         </div>
-      </div>
+      </Layout>
     </>
   )
 }

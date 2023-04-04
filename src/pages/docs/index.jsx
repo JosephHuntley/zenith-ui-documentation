@@ -3,6 +3,14 @@ import Head from "next/head"
 import Link from "next/link"
 import { getAllArticles } from "../../utils/mdx"
 import Layout from "@/layout/Layout"
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Text,
+  Container,
+} from "zenith-ui"
 
 export default function Page({ posts }) {
   return (
@@ -17,7 +25,10 @@ export default function Page({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div>
+        <Container
+          margin={{ m: "3rem" }}
+          grid={{ gap: "1rem", colTemplate: "1fr 1fr 1fr" }}
+        >
           {posts.map((frontMatter) => {
             return (
               <Link
@@ -25,14 +36,26 @@ export default function Page({ posts }) {
                 passHref
                 key={frontMatter.title}
               >
-                <div>
-                  <h2>{frontMatter.title}</h2>
-                  <p>{frontMatter.description}</p>
-                </div>
+                <Card size="md">
+                  <CardHeader>
+                    <Text
+                      variant="h3"
+                      align="center"
+                      size={{ width: "100%" }}
+                      font={{ color: "inherit" }}
+                    >
+                      {frontMatter.title}
+                    </Text>
+                  </CardHeader>
+                  <CardBody></CardBody>
+                  <CardFooter>
+                    <p>{frontMatter.description}</p>
+                  </CardFooter>
+                </Card>
               </Link>
             )
           })}
-        </div>
+        </Container>
       </Layout>
     </>
   )

@@ -56,8 +56,8 @@ li {
 
 .light-mode {
   --font-color: #101212;
-  --bg-primary: #ffffff;
-  --bg-secondary: #ccc;
+  --bg-primary: #fff;
+  --bg-secondary: #aaafbf;
 }
 .dark-mode {
   --font-color: #bbb;
@@ -73,7 +73,7 @@ li {
   background: linear-gradient(
     90deg,
     rgba(165, 165, 165, 1) 0%,
-    rgba(30, 203, 255, 1) 100%
+    rgba(92, 207, 230, 1) 100%
   );
   width: max-content;
   display: inline;
@@ -85,10 +85,24 @@ li {
   background: linear-gradient(
     90deg,
     rgba(40, 40, 40, 1) 0%,
-    rgba(30, 203, 255, 1) 100%
+    rgba(92, 207, 230, 1) 100%
   );
   width: max-content;
   display: inline;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.pre {
+  padding: 1rem;
+  border-radius: 10px;
+
+  background-color: #222938;
+}
+
+/* .light-mode .pre {
+  background-color: var(--bg-secondary);
+}
+.dark-mode .pre {
+  background-color: var(--bg-secondary);
+} */

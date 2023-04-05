@@ -1,7 +1,7 @@
 import React from "react"
+import { allDocs } from "contentlayer/generated"
 import Head from "next/head"
 import Link from "next/link"
-import { getAllArticles } from "../../utils/mdx"
 import Layout from "@/layout/Layout"
 import {
   Card,
@@ -12,7 +12,7 @@ import {
   Container,
 } from "zenith-ui"
 
-export default function Page({ posts }) {
+export default function Page({ docs }) {
   return (
     <>
       <Head>
@@ -29,13 +29,9 @@ export default function Page({ posts }) {
           margin={{ m: "3rem" }}
           grid={{ gap: "1rem", colTemplate: "1fr 1fr 1fr" }}
         >
-          {posts.map((frontMatter) => {
+          {docs.map((doc) => {
             return (
-              <Link
-                href={`/docs/${frontMatter.slug}`}
-                passHref
-                key={frontMatter.title}
-              >
+              <Link href={`/docs/${doc.slug}`} passHref key={doc.title}>
                 <Card size="md">
                   <CardHeader>
                     <Text
@@ -44,12 +40,12 @@ export default function Page({ posts }) {
                       size={{ width: "100%" }}
                       font={{ color: "inherit" }}
                     >
-                      {frontMatter.title}
+                      {doc.title}
                     </Text>
                   </CardHeader>
                   <CardBody></CardBody>
                   <CardFooter>
-                    <p>{frontMatter.description}</p>
+                    <p>{doc.description}</p>
                   </CardFooter>
                 </Card>
               </Link>
@@ -62,11 +58,11 @@ export default function Page({ posts }) {
 }
 
 export async function getStaticProps() {
-  const articles = await getAllArticles()
+  const articles = allDocs
 
   return {
     props: {
-      posts: articles.reverse(),
+      docs: articles,
     },
   }
 }

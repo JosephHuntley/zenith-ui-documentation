@@ -1,27 +1,27 @@
 import React from "react"
 import Head from "next/head"
-import { MDXRemote } from "next-mdx-remote"
-import { serialize } from "next-mdx-remote/serialize"
 import Layout from "@/layout/Layout"
-import { getSlug, getArticleFromSlug } from "../../utils/mdx"
+import { allDocs } from "contentlayer/generated"
+import { useMDXComponent } from "next-contentlayer/hooks"
+// import { getSlug, getArticleFromSlug } from "../../utils/mdx"
+import { MDXComponents } from "../../components/mdx-components/mdx-components"
 
-export default function Doc({ post: { source, frontmatter, components } }) {
-  const title = `${frontmatter.title} | Zenith-UI`
+export default function Doc({ doc }) {
+  const Component = useMDXComponent(doc?.body?.code)
+  const title = `${doc.title} | Zenith-UI`
 
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content={frontmatter.description} />
+        <meta name="description" content={doc.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <div>
-          <h1>{frontmatter.title}</h1>
-          <div>
-            <MDXRemote {...source} components={components} />
-          </div>
+          <h1>{doc.title}</h1>
+          <Component components={MDXComponents} />
         </div>
       </Layout>
     </>
@@ -29,48 +29,18 @@ export default function Doc({ post: { source, frontmatter, components } }) {
 }
 
 export async function getStaticPaths() {
-  // getting all paths of each article as an array of
-  // objects with their unique slugs
-  const paths = (await getSlug()).map((slug) => ({ params: { slug } }))
-
+  const paths = allDocs.map((doc) => ({ params: { slug: doc.slug } }))
   return {
-    paths,
-    // in situations where you try to access a path
-    // that does not exist. it'll return a 404 page
+    paths: paths,
     fallback: false,
   }
 }
+
 export async function getStaticProps({ params }) {
-  //fetch the particular file based on the slug
-  const { slug } = params
-  const { content, frontmatter } = await getArticleFromSlug(slug)
-
-  // const mdxSource = await serialize(content, {
-  // 	mdxOptions: {
-  // 		rehypePlugins: [
-  // 			rehypeSlug,
-  // 			[
-  // 				rehypeAutolinkHeadings,
-  // 				{
-  // 					properties: { className: ['anchor'] },
-  // 				},
-  // 				{ behavior: 'wrap' },
-  // 			],
-  // 			rehypeHighlight,
-  // 			rehypeCodeTitles,
-  // 		],
-  // 	},
-  // });
-  const mdxSource = await serialize(content, {
-    parseFrontmatter: true,
-  })
-
+  const doc = allDocs.find((doc) => doc.slug === params.slug)
   return {
     props: {
-      post: {
-        source: mdxSource,
-        frontmatter,
-      },
+      doc,
     },
   }
 }

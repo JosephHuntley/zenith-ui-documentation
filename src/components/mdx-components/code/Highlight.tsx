@@ -1,4 +1,3 @@
-//@ts-nocheck
 import BaseHighlight, { Language, defaultProps } from "prism-react-renderer"
 import React from "react"
 import { Container } from "zenith-ui"
@@ -11,6 +10,7 @@ const calculateLinesToHighlight = (meta: string) => {
   if (!RE.test(meta)) {
     return () => false
   }
+  // @ts-ignore
   const lineNumbers = RE.exec(meta)[1]
     .split(`,`)
     .map((v) => v.split(`-`).map((x) => parseInt(x, 10)))
@@ -38,6 +38,7 @@ function Highlight({
   showLines,
   ...props
 }: HighlightProps) {
+  // @ts-ignore
   const shouldHighlightLine = calculateLinesToHighlight(metastring)
 
   return (

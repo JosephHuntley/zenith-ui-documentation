@@ -28,6 +28,7 @@ const Header = () => {
         </Text>
         <Container flex={{ gap: "1rem" }}>
           <AiFillGithub className={styles.icon} />
+          {/* @ts-ignore */}
           <Container onClick={themeToggler}>
             {theme === "dark" ? (
               <BsMoonFill className={styles.icon} />

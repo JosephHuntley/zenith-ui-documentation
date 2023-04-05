@@ -9,7 +9,7 @@ const Sidebar = () => {
     <Box
       size={{ width: "15vw", height: "calc(100%-7rem)" }}
       flex={{ direction: "column", gap: "2rem" }}
-      position={{ position: "absolute", top: "7rem" }}
+      position={{ position: "fixed", top: "7rem" }}
       padding={{ x: "1.5rem", y: "2rem" }}
     >
       {Components.map((data) => (

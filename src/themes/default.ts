@@ -1,7 +1,7 @@
 const theme = {
   colors: {
     bg_primary: "#fff",
-    bg_secondary: "#ccc",
+    bg_secondary: "#aaafbf",
     text_primary: "#101212",
     white: "#fff",
   },

@@ -1,11 +1,21 @@
 import Head from "next/head"
 import { useRouter } from "next/router"
-import { Button, Center, Container, Text } from "zenith-ui"
+import {
+  Button,
+  Center,
+  Container,
+  Portal,
+  Text,
+  Alert,
+  CloseButton,
+} from "zenith-ui"
 import { HiArrowNarrowRight } from "react-icons/hi"
 import Header from "@/layout/Header/Header"
+import { useState } from "react"
 
 export default function Home() {
   const router = useRouter()
+  const [isOpen, setIsOpen] = useState(true)
   return (
     <>
       <Head>
@@ -65,6 +75,35 @@ export default function Home() {
           </Container>
         </Center>
       </main>
+      <Portal>
+        <Alert isOpen={isOpen}>
+          <Text color="transparent">
+            This website is still under development. Feel free to check out the{" "}
+            <a
+              href="https://github.com/JosephHuntley/zenith-ui"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://www.npmjs.com/package/zenith-ui"
+              target="_blank"
+              rel="noreferrer"
+            >
+              NPM Package
+            </a>
+            .
+          </Text>
+          <CloseButton
+            margin={{ left: "2rem" }}
+            size={{ width: "1.5rem" }}
+            color="transparent"
+            onClick={() => setIsOpen(false)}
+          />
+        </Alert>
+      </Portal>
     </>
   )
 }

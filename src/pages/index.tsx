@@ -19,7 +19,8 @@ export default function Home() {
         <Center size={{ height: "100vh" }}>
           <Container
             flex={{ gap: "1rem", direction: "column", justify: "center" }}
-            size={{ width: "60rem" }}
+            md={{ size: { width: "75vw" } }}
+            size={{ width: "62rem" }}
           >
             <Text variant="h1" size={{ width: "100%" }} font={{ size: "4rem" }}>
               Create fast accessible apps with

@@ -5,7 +5,19 @@ category: "disclosure"
 package: "zenith-ui/accordion"
 ---
 
+The accordion component is a collapsible panel for displaying content.
+
 ## Import
+
+Zenith-UI exports four components.
+
+- `Accordion`: The wrapper that uses cloneElement to pass props to
+  `AccordionItem` children.
+- `AccordionItem`: A single accordion item.
+- `AccodiongHeader`: The button used to display `AccordionPanel`.
+- `AccordionPanel`: The container for the details to be revealed.
+
+<br />
 
 ```jsx
 import {
@@ -18,6 +30,32 @@ import {
 
 ## Usage
 
+<Container size={{ width: "100%" }} flex={{ justify: "center" }}>
+  <Accordion>
+    <AccordionItem>
+      <AccordionHeader>Item 1</AccordionHeader>
+      <AccordionPanel>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+        necessitatibus placeat adipisci omnis consectetur exercitationem!
+      </AccordionPanel>
+    </AccordionItem>
+    <AccordionItem>
+      <AccordionHeader>Item 2</AccordionHeader>
+      <AccordionPanel>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+        necessitatibus placeat adipisci omnis consectetur exercitationem!
+      </AccordionPanel>
+    </AccordionItem>
+    <AccordionItem>
+      <AccordionHeader>Item 3</AccordionHeader>
+      <AccordionPanel>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+        necessitatibus placeat adipisci omnis consectetur exercitationem!
+      </AccordionPanel>
+    </AccordionItem>
+  </Accordion>
+</Container>
+```jsx
 <Accordion>
   <AccordionItem>
     <AccordionHeader>Item 1</AccordionHeader>
@@ -41,11 +79,90 @@ import {
     </AccordionPanel>
   </AccordionItem>
 </Accordion>
+```
+<Container size={{ width: "100%" }} flex={{ justify: "center" }}>
+  <Accordion>
+    <AccordionItem>
+      <AccordionHeader>Item 1 </AccordionHeader>
+      <AccordionPanel>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+        necessitatibus placeat adipisci omnis consectetur exercitationem!
+      </AccordionPanel>
+    </AccordionItem>
+    <AccordionItem>
+      <AccordionHeader>Item 2</AccordionHeader>
+      <AccordionPanel>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+        necessitatibus placeat adipisci omnis consectetur exercitationem!
+      </AccordionPanel>
+    </AccordionItem>
+    <AccordionItem>
+      <AccordionHeader>Item 3</AccordionHeader>
+      <AccordionPanel>
+        <Accordion
+          margin={{ left: ".5rem" }}
+          padding={{ p: "none" }}
+          size={{ width: "calc(100% - 0.5rem)" }}
+        >
+          <AccordionItem>
+            <AccordionHeader>Item A</AccordionHeader>
+            <AccordionPanel>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              necessitatibus placeat adipisci omnis consectetur exercitationem!
+            </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionHeader>Item B</AccordionHeader>
+            <AccordionPanel>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              necessitatibus placeat adipisci omnis consectetur exercitationem!
+            </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionHeader>Item C</AccordionHeader>
+            <AccordionPanel>
+              <Accordion
+                margin={{ left: ".5rem" }}
+                padding={{ p: "none" }}
+                size={{ width: "calc(100% - 0.5rem)" }}
+              >
+                <AccordionItem>
+                  <AccordionHeader>Item I</AccordionHeader>
+                  <AccordionPanel>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                    necessitatibus placeat adipisci omnis consectetur
+                    exercitationem!
+                  </AccordionPanel>
+                </AccordionItem>
+                <AccordionItem>
+                  <AccordionHeader>Item II</AccordionHeader>
+                  <AccordionPanel>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                    necessitatibus placeat adipisci omnis consectetur
+                    exercitationem!
+                  </AccordionPanel>
+                </AccordionItem>
+                <AccordionItem>
+                  <AccordionHeader>Item III</AccordionHeader>
+                  <AccordionPanel>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                    necessitatibus placeat adipisci omnis consectetur
+                    exercitationem!
+                  </AccordionPanel>
+                </AccordionItem>
+              </Accordion>
+            </AccordionPanel>
+          </AccordionItem>
+        </Accordion>
+      </AccordionPanel>
+    </AccordionItem>
+  </Accordion>
+</Container>
 
 ```jsx
 <Accordion>
   <AccordionItem>
-    <AccordionHeader>Item 1</AccordionHeader>
+    <AccordionHeader>Item 1 </AccordionHeader>
     <AccordionPanel>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. At necessitatibus
       placeat adipisci omnis consectetur exercitationem!
@@ -61,8 +178,61 @@ import {
   <AccordionItem>
     <AccordionHeader>Item 3</AccordionHeader>
     <AccordionPanel>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. At necessitatibus
-      placeat adipisci omnis consectetur exercitationem!
+      <Accordion
+        margin={{ left: "0.5rem" }}
+        padding={{ p: "none" }}
+        size={{ width: "calc(100% - 0.5rem)" }}
+      >
+        <AccordionItem>
+          <AccordionHeader>Item A</AccordionHeader>
+          <AccordionPanel>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+            necessitatibus placeat adipisci omnis consectetur exercitationem!
+          </AccordionPanel>
+        </AccordionItem>
+        <AccordionItem>
+          <AccordionHeader>Item B</AccordionHeader>
+          <AccordionPanel>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+            necessitatibus placeat adipisci omnis consectetur exercitationem!
+          </AccordionPanel>
+        </AccordionItem>
+        <AccordionItem>
+          <AccordionHeader>Item C</AccordionHeader>
+          <AccordionPanel>
+            <Accordion
+              margin={{ left: ".5rem" }}
+              padding={{ p: "none" }}
+              size={{ width: "calc(100%-.5rem)" }}
+            >
+              <AccordionItem>
+                <AccordionHeader>Item I</AccordionHeader>
+                <AccordionPanel>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                  necessitatibus placeat adipisci omnis consectetur
+                  exercitationem!
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem>
+                <AccordionHeader>Item II</AccordionHeader>
+                <AccordionPanel>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                  necessitatibus placeat adipisci omnis consectetur
+                  exercitationem!
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem>
+                <AccordionHeader>Item III</AccordionHeader>
+                <AccordionPanel>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                  necessitatibus placeat adipisci omnis consectetur
+                  exercitationem!
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
     </AccordionPanel>
   </AccordionItem>
 </Accordion>

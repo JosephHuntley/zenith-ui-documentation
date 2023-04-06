@@ -7,7 +7,7 @@ const Sidebar = () => {
   const router = useRouter()
   return (
     <Box
-      size={{ width: "15vw", height: "calc(100%-7rem)" }}
+      size={{ width: "15vw", height: "calc(100% - 7rem)" }}
       flex={{ direction: "column", gap: "2rem" }}
       position={{ position: "fixed", top: "7rem" }}
       padding={{ x: "1.5rem", y: "2rem" }}

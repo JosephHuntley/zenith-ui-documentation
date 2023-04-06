@@ -27,7 +27,13 @@ const Header = () => {
           Zenith-UI
         </Text>
         <Container flex={{ gap: "1rem" }}>
-          <AiFillGithub className={styles.icon} />
+          <a
+            href="https://github.com/JosephHuntley/zenith-ui"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <AiFillGithub className={styles.icon} />
+          </a>
           {/* @ts-ignore */}
           <Container onClick={themeToggler}>
             {theme === "dark" ? (

@@ -54,6 +54,7 @@ export default function Home() {
 
           <Container
             margin={{ m: "3rem" }}
+            flex={{ direction: "row" }}
             sm={{
               flex: { direction: "column", gap: "1.5rem" },
               size: { width: "calc(100% - 6rem)" },

@@ -21,7 +21,7 @@ export default function Home() {
       <Head>
         <title>Zenith UI Docs</title>
         <meta name="description" content="Documentation for Zenith UI" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>

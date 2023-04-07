@@ -15,7 +15,7 @@ export default function Doc({ doc }) {
       <Head>
         <title>{title}</title>
         <meta name="description" content={doc.description} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>

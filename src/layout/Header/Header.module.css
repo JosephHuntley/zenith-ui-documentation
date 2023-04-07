@@ -16,8 +16,9 @@
   height: 5rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-
-  @media screen and (min-width: 900px) {
+}
+@media screen and (min-width: 900px) {
+  .icon {
     width: 3rem;
     height: 3rem;
   }

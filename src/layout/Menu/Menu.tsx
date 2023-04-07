@@ -21,6 +21,7 @@ const Menu = ({ isOpen, setIsOpen }: MenuProps) => {
           padding: { x: "3rem" },
         }}
         sm={{ size: { height: "calc(100vh - 8rem)", width: "100vw" } }}
+        xs={{ size: { height: "calc(100vh - 8rem)", width: "100vw" } }}
       >
         {Components.map((data) => (
           <Container

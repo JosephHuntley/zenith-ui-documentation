@@ -33,6 +33,7 @@ export default function Page({ docs }) {
             margin: { x: "6rem" },
           }}
           sm={{ grid: { colTemplate: "1fr" }, margin: { x: "5.5rem" } }}
+          xs={{ grid: { colTemplate: "1fr" }, margin: { x: "4rem" } }}
         >
           {docs.map((doc) => {
             return (

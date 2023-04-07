@@ -26,8 +26,13 @@ export default function Page({ docs }) {
       </Head>
       <Layout>
         <Container
-          margin={{ m: "3rem" }}
+          margin={{ x: "3rem", y: "3rem" }}
           grid={{ gap: "1rem", colTemplate: "1fr 1fr 1fr" }}
+          md={{
+            grid: { colTemplate: "1fr 1fr", gap: "3rem" },
+            margin: { x: "6rem" },
+          }}
+          sm={{ grid: { colTemplate: "1fr" }, margin: { x: "5.5rem" } }}
         >
           {docs.map((doc) => {
             return (

@@ -25,7 +25,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Header />
+        <Header isMenu={false} />
         <Center size={{ height: "100vh" }} xs={{ margin: { y: "15rem" } }}>
           <Container
             flex={{ gap: "1rem", direction: "column", justify: "center" }}
@@ -59,6 +59,10 @@ export default function Home() {
               flex: { direction: "column", gap: "1.5rem" },
               size: { width: "calc(100% - 6rem)" },
             }}
+            xs={{
+              flex: { direction: "column", gap: "1.5rem" },
+              size: { width: "calc(100% - 6rem)" },
+            }}
           >
             <Button
               variant="outline"
@@ -82,9 +86,9 @@ export default function Home() {
                 margin={{ left: "1.5rem" }}
                 md={{
                   size: { width: "100%" },
-                  margin: { left: "0", top: "1.5rem" },
                 }}
                 sm={{ margin: { left: "0" }, size: { width: "100%" } }}
+                xs={{ margin: { left: "0" }, size: { width: "100%" } }}
               >
                 <Text variant="h6" font={{ size: "2rem" }}>
                   GitHub

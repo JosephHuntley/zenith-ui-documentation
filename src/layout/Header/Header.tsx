@@ -1,14 +1,23 @@
-import React, { useContext } from "react"
-import { Box, Container, Text, useDarkMode } from "zenith-ui"
+import React, { useContext, useState } from "react"
+import { Box, Container, Portal, Text, useDarkMode } from "zenith-ui"
 import styles from "./Header.module.css"
 import { useRouter } from "next/router"
 import { AiFillGithub } from "react-icons/ai"
 import { CiSun } from "react-icons/ci"
 import { BsMoonFill } from "react-icons/bs"
 import { ThemeContext } from "../../styles/Theme"
+import Menu from "../Menu/Menu"
+import { Divide as Hamburger } from "hamburger-react"
 
-const Header = () => {
+type HeaderProps = {
+  isMenu: boolean
+  setIsMenu?: Function
+}
+
+const Header = ({ isMenu, setIsMenu }: HeaderProps) => {
   const { theme, themeToggler } = useContext(ThemeContext)
+  const [isOpen, setIsOpen] = useState(false)
+
   const router = useRouter()
   return (
     <header className={styles.header}>
@@ -43,6 +52,14 @@ const Header = () => {
             )}
           </Container>
         </Container>
+        {isMenu ? (
+          <Container style={{ position: "relative", zIndex: "999" }}>
+            <Hamburger toggled={isOpen} toggle={setIsOpen} />
+            <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
+          </Container>
+        ) : (
+          <></>
+        )}
       </Box>
     </header>
   )

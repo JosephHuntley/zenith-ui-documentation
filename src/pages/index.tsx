@@ -21,23 +21,30 @@ export default function Home() {
       <Head>
         <title>Zenith UI Docs</title>
         <meta name="description" content="Documentation for Zenith UI" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <Header />
-        <Center size={{ height: "100vh" }}>
+        <Center size={{ height: "100vh" }} xs={{ margin: { y: "15rem" } }}>
           <Container
             flex={{ gap: "1rem", direction: "column", justify: "center" }}
             md={{ size: { width: "75vw" } }}
+            sm={{ size: { width: "95vw" } }}
+            xs={{ size: { width: "95vw" } }}
             size={{ width: "62rem" }}
           >
-            <Text variant="h1" size={{ width: "100%" }} font={{ size: "4rem" }}>
+            <Text
+              variant="h1"
+              size={{ width: "100%" }}
+              font={{ size: "4rem" }}
+              sm={{ font: { size: "4rem" } }}
+            >
               Create fast accessible apps with
               <br />
               <span className="logo">Zenith-UI</span>
             </Text>
-            <Text variant="p">
+            <Text variant="p" md={{ font: { size: "3rem" } }}>
               React UI components, built with React and styled-components, offer
               responsive and accessible design Simplify the process of creating
               modern web applications with features like fields, navigation
@@ -45,7 +52,13 @@ export default function Home() {
             </Text>
           </Container>
 
-          <Container margin={{ m: "3rem" }}>
+          <Container
+            margin={{ m: "3rem" }}
+            sm={{
+              flex: { direction: "column", gap: "1.5rem" },
+              size: { width: "calc(100% - 6rem)" },
+            }}
+          >
             <Button
               variant="outline"
               padding={{ x: "4rem", y: "2rem" }}
@@ -66,6 +79,11 @@ export default function Home() {
                 variant="outline"
                 padding={{ x: "4rem", y: "2rem" }}
                 margin={{ left: "1.5rem" }}
+                md={{
+                  size: { width: "100%" },
+                  margin: { left: "0", top: "1.5rem" },
+                }}
+                sm={{ margin: { left: "0" }, size: { width: "100%" } }}
               >
                 <Text variant="h6" font={{ size: "2rem" }}>
                   GitHub
@@ -80,6 +98,7 @@ export default function Home() {
           <Text color="transparent">
             This website is still under development. Feel free to check out the{" "}
             <a
+              className="underline"
               href="https://github.com/JosephHuntley/zenith-ui"
               target="_blank"
               rel="noreferrer"
@@ -88,6 +107,7 @@ export default function Home() {
             </a>{" "}
             and{" "}
             <a
+              className="underline"
               href="https://www.npmjs.com/package/zenith-ui"
               target="_blank"
               rel="noreferrer"

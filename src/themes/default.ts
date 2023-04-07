@@ -6,10 +6,10 @@ const theme = {
     white: "#fff",
   },
   breakpoints: {
-    xs: "screen and (max-width: 640px)",
-    phone: "screen and (max-width: 768px)",
-    tablet: "screen and (max-width: 1024px)",
-    laptop: "screen and (max-width: 1280px)",
+    xs: " screen and (max-width: 400px)",
+    phone: "screen and (max-width: 600px)",
+    tablet: " screen and (max-width: 900px)",
+    laptop: " screen and (max-width: 1280px)",
   },
   status: {
     success: { bg: "rgba(154, 230, 180, 0.36)", font: "#9AE6B4" },

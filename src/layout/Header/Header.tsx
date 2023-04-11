@@ -6,8 +6,9 @@ import { AiFillGithub } from "react-icons/ai"
 import { CiSun } from "react-icons/ci"
 import { BsMoonFill } from "react-icons/bs"
 import { ThemeContext } from "../../styles/Theme"
-import Menu from "../Menu/Menu"
+import Menu from "../Menu"
 import { Divide as Hamburger } from "hamburger-react"
+import Search from "../Search"
 
 type HeaderProps = {
   isMenu: boolean
@@ -35,6 +36,7 @@ const Header = ({ isMenu, setIsMenu }: HeaderProps) => {
         >
           Zenith-UI
         </Text>
+        {!isMenu ? <Search /> : <></>}
         <Container flex={{ gap: "1rem" }}>
           <a
             href="https://github.com/JosephHuntley/zenith-ui"
@@ -53,7 +55,7 @@ const Header = ({ isMenu, setIsMenu }: HeaderProps) => {
           </Container>
         </Container>
         {isMenu ? (
-          <Container style={{ position: "relative", zIndex: "999" }}>
+          <Container>
             <Hamburger toggled={isOpen} toggle={setIsOpen} />
             <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
           </Container>

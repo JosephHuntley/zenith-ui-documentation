@@ -21,7 +21,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "typescript": "5.0.2",
-    "zenith-ui": "^0.0.7"
+    "zenith-ui": "file:zenith-ui-0.0.7.tgz"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",

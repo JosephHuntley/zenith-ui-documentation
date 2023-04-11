@@ -1,6 +1,6 @@
 import React from "react"
 import { Box, Container, Text } from "zenith-ui"
-import { Components } from "../../../data/Constants"
+import { Components } from "../../data/Constants"
 import { useRouter } from "next/router"
 
 const Sidebar = () => {

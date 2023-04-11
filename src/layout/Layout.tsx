@@ -1,5 +1,5 @@
 import React, { ReactNode, useEffect, useState } from "react"
-import Sidebar from "./Sidebar/Sidebar"
+import Sidebar from "./Sidebar"
 import Header from "./Header/Header"
 import styles from "./Layout.module.css"
 import { useWindowSize } from "zenith-ui"

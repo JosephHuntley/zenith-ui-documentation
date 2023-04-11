@@ -25,6 +25,6 @@ export const Components = [
   },
   {
     category: "Other",
-    items: ["Backdrop", "Close BUtton", "Media Query", "Portal"],
+    items: ["Backdrop", "Close Button", "Media Query", "Portal"],
   },
 ]

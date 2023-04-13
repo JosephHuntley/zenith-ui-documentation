@@ -4,3 +4,123 @@ description: "Used to trigger an event or action."
 category: "disclosure"
 package: "zenith-ui/button"
 ---
+
+Used to trigger an event or action.
+
+## Import
+
+Zenith-UI imports a sinlge component:
+
+- `Button`: Used to trigger an event or action.
+
+  <br />
+
+```jsx
+import Button from "zenith-ui"
+```
+
+## Usage
+
+<Container margin={{ bottom: "1.6rem" }}>
+  <Button
+    padding={{ p: ".4rem" }}
+    onClick={() => {
+      alert("Hello World")
+    }}
+  >
+    Press Me
+  </Button>
+</Container>
+```jsx
+<Button
+  padding={{ p: ".4rem" }}
+  onClick={() => {
+    alert("Hello World")
+  }}
+>
+  Press Me
+</Button>
+```
+
+## Variants
+
+<Container
+  flex={{ direction: "row", gap: ".4rem" }}
+  margin={{ bottom: "1.6rem" }}
+>
+  <Button
+    padding={{ p: ".4rem" }}
+    onClick={() => {
+      alert("Default")
+    }}
+  >
+    Default
+  </Button>
+  <Button
+    variant="elevated"
+    padding={{ p: ".4rem" }}
+    onClick={() => {
+      alert("Elevated")
+    }}
+  >
+    Elevated
+  </Button>
+  <Button
+    variant="outline"
+    padding={{ p: ".4rem" }}
+    onClick={() => {
+      alert("Outline")
+    }}
+  >
+    Outline
+  </Button>
+  <Button
+    variant="hover"
+    padding={{ p: ".4rem" }}
+    onClick={() => {
+      alert("Hover")
+    }}
+  >
+    Hover
+  </Button>
+</Container>
+
+```jsx
+<Container flex={{ direction: "row", gap: ".4rem" }}>
+  <Button
+    padding={{ p: ".4rem" }}
+    onClick={() => {
+      alert("Default")
+    }}
+  >
+    Default
+  </Button>
+  <Button
+    variant="elevated"
+    padding={{ p: ".4rem" }}
+    onClick={() => {
+      alert("Elevated")
+    }}
+  >
+    Elevated
+  </Button>
+  <Button
+    variant="outline"
+    padding={{ p: ".4rem" }}
+    onClick={() => {
+      alert("Outline")
+    }}
+  >
+    Outline
+  </Button>
+  <Button
+    variant="hover"
+    padding={{ p: ".4rem" }}
+    onClick={() => {
+      alert("Hover")
+    }}
+  >
+    Hover
+  </Button>
+</Container>
+```

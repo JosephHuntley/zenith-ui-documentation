@@ -50,8 +50,8 @@ function Highlight({
       {...props}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <div data-language={language}>
-          <pre className={`pre ${className}`} style={style}>
+        <div className={Styles.overflow} data-language={language}>
+          <pre className={`pre ${className} ${Styles.overflow}`} style={style}>
             {tokens.map((line, i) => {
               const lineProps = getLineProps({ line, key: i })
               return (

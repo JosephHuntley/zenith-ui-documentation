@@ -4,3 +4,53 @@ description: "Used to highlight an item's status."
 category: "disclosure"
 package: "zenith-ui/badge"
 ---
+
+Used to highlight an item's status.
+
+## Import
+
+Zenith-UI exports a single component:
+
+- `Badge`:Used to highlight an item's status.
+
+<br />
+
+```jsx
+import { Badge } from "zenith-ui"
+```
+
+## Usage
+
+<Container
+  margin={{ bottom: "1.6rem" }}
+  size={{ width: "100%" }}
+  flex={{ justify: "center" }}
+>
+  <Badge status="default">Badge</Badge>
+</Container>
+
+```jsx
+<Badge status="default">Badge</Badge>
+```
+
+## Variants
+
+<Container
+  margin={{ bottom: "1.6rem" }}
+  size={{ width: "100%" }}
+  flex={{ justify: "center", direction: "row", gap: ".4rem" }}
+>
+  <Badge status="default">Default</Badge>
+  <Badge status="success">Success</Badge>
+  <Badge status="failure">Failure</Badge>
+  <Badge status="new">New</Badge>
+</Container>
+
+```jsx
+<Container flex={{ justify: "center", direction: "row", gap: ".4rem" }}>
+  <Badge status="default">Default</Badge>
+  <Badge status="success">Success</Badge>
+  <Badge status="failure">Failure</Badge>
+  <Badge status="new">New</Badge>
+</Container>
+```

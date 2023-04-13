@@ -16,12 +16,16 @@ Zenith-UI imports a sinlge component:
   <br />
 
 ```jsx
-import Button from "zenith-ui"
+import { Button } from "zenith-ui"
 ```
 
 ## Usage
 
-<Container margin={{ bottom: "1.6rem" }}>
+<Container
+  margin={{ bottom: "1.6rem" }}
+  size={{ width: "100%" }}
+  flex={{ justify: "center" }}
+>
   <Button
     padding={{ p: ".4rem" }}
     onClick={() => {
@@ -45,8 +49,9 @@ import Button from "zenith-ui"
 ## Variants
 
 <Container
-  flex={{ direction: "row", gap: ".4rem" }}
+  flex={{ direction: "row", gap: ".4rem", justify: "center" }}
   margin={{ bottom: "1.6rem" }}
+  size={{ width: "100%" }}
 >
   <Button
     padding={{ p: ".4rem" }}

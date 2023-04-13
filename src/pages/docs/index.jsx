@@ -32,8 +32,8 @@ export default function Page({ docs }) {
             grid: { colTemplate: "1fr 1fr", gap: "3rem" },
             margin: { x: "6rem" },
           }}
-          sm={{ grid: { colTemplate: "1fr" }, margin: { x: "5.5rem" } }}
-          xs={{ grid: { colTemplate: "1fr" }, margin: { x: "4rem" } }}
+          sm={{ grid: { colTemplate: "1fr" }, margin: { x: "3rem" } }}
+          xs={{ grid: { colTemplate: "1fr" }, margin: { x: "2rem" } }}
         >
           {docs.map((doc) => {
             return (

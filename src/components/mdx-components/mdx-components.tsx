@@ -20,7 +20,5 @@ export const MDXComponents = {
       {...props}
     />
   ),
-  li: (props: any) => (
-    <li style={{ display: "flex", marginBottom: ".1rem" }} {...props} />
-  ),
+  li: (props: any) => <li style={{ marginBottom: ".1rem" }} {...props} />,
 }

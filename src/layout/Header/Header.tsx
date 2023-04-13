@@ -36,12 +36,14 @@ const Header = ({ isMenu, setIsMenu }: HeaderProps) => {
         >
           Zenith-UI
         </Text>
+        {/* Only displays search on desktop */}
         {!isMenu ? <Search /> : <></>}
         <Container flex={{ gap: "1rem" }}>
           <a
             href="https://github.com/JosephHuntley/zenith-ui"
             target="_blank"
             rel="noreferrer"
+            aria-label="GitHub"
           >
             <AiFillGithub className={styles.icon} />
           </a>
